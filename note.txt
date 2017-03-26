@@ -31,3 +31,7 @@ aaptOptions{additionalParameters "--no-version-vectors"}
 ②如果要设置background(带状态的)，那就不能直接使用，要将Vector包在Selector中再设置，这样才能正常显示。
 如果在AppCompat23.2中还需要设置 AppCompatDelegate.setCompatVectorFromResourcesEnabled(true);
 在AppCompat25.2中就不需要设置了
+
+8.在项目中使用动态Vector
+使用animated-vector(动画粘合剂)将vector和objectAnimator集合在一起，设置给控件，并在代码中转化成Animatable,开启start方法后动画开始。
+用group标签可以讲Vector拆分成几块，分别执行不同的动画，以达到效果
