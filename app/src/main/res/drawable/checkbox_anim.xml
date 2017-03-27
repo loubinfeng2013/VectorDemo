@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animated-vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:drawable="@drawable/checkbox_no_check">
+
+    <target
+        android:animation="@animator/check_anim"
+        android:name="checkbox"/>
+
+</animated-vector>

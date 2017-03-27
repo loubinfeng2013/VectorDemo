@@ -62,7 +62,49 @@
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 app:srcCompat="@drawable/download_anim"
-                android:onClick="handleDownloadAnim"
+                android:onClick="handleAnim"
+                android:clickable="true"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="使用Vector显示轨迹动画"
+                />
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                app:srcCompat="@drawable/gou_anim"
+                android:onClick="handleAnim"
+                android:clickable="true"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="使用pathData动画"
+                />
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                app:srcCompat="@drawable/checkbox_no_check"
+                android:onClick="handlePathDataAnim"
                 android:clickable="true"/>
 
         </LinearLayout>

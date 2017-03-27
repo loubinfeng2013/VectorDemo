@@ -1,5 +1,5 @@
 1.SVG资源与普通图片资源区别
-普通图片资源的渲染时基于像素点，而SVG图片是直接由GUP渲染，所以从效果和效率上都比较好，没有锯齿等问题
+普通图片资源的渲染时基于像素点,会失真，通过CPU计算的，考虑到GPU的硬件加速，所以效率会比较高，Vector是需要CPU计算的，没有硬件加速，如果pathData过于复杂效率比较低，但是不会失真
 
 2.android中SVG(Vector)与web中的SVG的关系
 SVG在前端中使用，是一套语法规范
@@ -35,3 +35,16 @@ aaptOptions{additionalParameters "--no-version-vectors"}
 8.在项目中使用动态Vector
 使用animated-vector(动画粘合剂)将vector和objectAnimator集合在一起，设置给控件，并在代码中转化成Animatable,开启start方法后动画开始。
 用group标签可以讲Vector拆分成几块，分别执行不同的动画，以达到效果
+
+9.使用Vector实现轨迹绘制动画
+主要使用一个path的一个trimPathStart属性，表示从开始截取的路径，1表示全部截取，就是不可见，0表示全不截取，就是都可见，当前的vector是stroke图形时就能显示绘制轨迹
+
+10.使用动态Vector的一些兼容问题
+①插值器必须要用系统自带的，才能做到3.0+全兼容
+②在Android5.0以下的版本支持pathData动画
+
+11.实现pathData动画(只支持5.0以上的设备)
+
+12.Vector和PNG资源的适用场景
+Vector一般适用在小的button小图标上，简单的Vector加载效率比png还要高，体积又小，还能带动画
+png一般适用在多图层，渲染比较复杂的图片，考虑到GUP的缓存与渲染优势，这种情况png效率高
